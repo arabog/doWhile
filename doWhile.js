@@ -61,11 +61,32 @@ left side of str, the second time will add a * to the right side, and so on.
 
 Finally, return the padded string.
 */
-function padIt(str, n){
-	do{
-		str = '*' + str;
-	}while(str)
-		return str + '*';
-}
 
-console.log(padIt('come', 5));
+// My solution was partially wrong
+// function padIt(str, n){
+// 	let a = Math.ceil(n / 2);
+// 	let b = Math.floor(n / 2);
+
+// 	str = '*'.repeat(a) + str + '*' .repeat(b);;
+// 	// str = str + '*' .repeat(b);
+
+// 	return str;
+// }
+
+console.log(padIt('come', 3));
+
+// codewar solution
+function padIt(str, n){
+	while(n > 0){
+
+		if(n % 2 !== 0) {
+			str = "*" + str;
+		}else{
+			str = str + "*";
+		}
+
+		n --;
+	}
+
+	return str;
+}
